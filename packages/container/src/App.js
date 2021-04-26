@@ -7,10 +7,9 @@ import { createBrowserHistory } from 'history';
 import Progress from './components/progress';
 // import MarkettingApp from './components/markettingApp';
 // import AuthApp from './components/AuthApp';
-import DashboardApp from './components/DashboardApp';
 const MarketingLazy = lazy(() => import('./components/markettingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
-// const DashboardLazy = lazy(()=> import('./components/DashboardApp'))
+const DashboardLazy = lazy(()=> import('./components/DashboardApp'))
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co'
@@ -38,7 +37,7 @@ export default ()=> {
                             </Route>
                             <Route path='/dashboard'>
                                 {!isSignedIn && <Redirect to='/'/>}
-                                <DashboardApp/>
+                                <DashboardLazy/>
                             </Route>
                             <Route path='/'>
                                 <MarketingLazy/>
