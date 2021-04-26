@@ -1,0 +1,2 @@
+import ('./bootstrap');
+// sample code
