@@ -20,10 +20,7 @@ const prodConfig = {
             },
             shared: packageJson.dependencies,
         })
-    ],
-    resolve: {
-        modules: ['.', 'node_modules']
-    }
+    ]
 }
 
 
