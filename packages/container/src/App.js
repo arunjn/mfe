@@ -4,9 +4,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Header from './components/Header';
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
 import Progress from './components/progress';
-import MarkettingApp from './components/markettingApp';
+// import MarkettingApp from './components/markettingApp';
 import AuthApp from './components/AuthApp';
-// const MarketingLazy = lazy(() => import('./components/MarkettingApp'));
+const MarketingLazy = lazy(() => import('./components/MarkettingApp'));
 // const AuthLazy = lazy(() => import('./components/AuthApp'));
 
 const generateClassName = createGenerateClassName({
@@ -27,7 +27,7 @@ export default ()=> {
                                 <AuthApp onSignIn={()=>{setIsSignedIn(true)}}/>
                             </Route>
                             <Route path='/'>
-                                <MarkettingApp/>
+                                <MarketingLazy/>
                             </Route>
                         </Switch>
                     </Suspense>
