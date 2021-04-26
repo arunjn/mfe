@@ -26,7 +26,9 @@ export default ()=> {
                             <Route path='/auth'>
                                 <AuthApp onSignIn={()=>{setIsSignedIn(true)}}/>
                             </Route>
-                            <Route path='/' component={MarkettingApp}/>
+                            <Route path='/'>
+                                <MarkettingApp/>
+                            </Route>
                         </Switch>
                     </Suspense>
                 </div>
