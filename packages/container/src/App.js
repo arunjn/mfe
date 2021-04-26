@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Header from './components/Header';
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
 import Progress from './components/progress';
-// import MarkettingApp from './components/MarkettingApp';
+import MarkettingApp from './components/MarkettingApp';
 import AuthApp from './components/AuthApp';
 // const MarketingLazy = lazy(() => import('./components/MarkettingApp'));
 // const AuthLazy = lazy(() => import('./components/AuthApp'));
@@ -26,7 +26,7 @@ export default ()=> {
                             <Route path='/auth'>
                                 <AuthApp onSignIn={()=>{setIsSignedIn(true)}}/>
                             </Route>
-                            {/* <Route path='/' component={MarketingLazy}/> */}
+                            <Route path='/' component={MarkettingApp}/>
                         </Switch>
                     </Suspense>
                 </div>
