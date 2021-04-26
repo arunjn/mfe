@@ -6,11 +6,11 @@ import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles'
 import Progress from './components/progress';
 // import MarkettingApp from './components/MarkettingApp';
 // import AuthApp from './components/AuthApp';
-const MarketingLazy = lazy(() => import('./components/MarkettingApp'));
+// const MarketingLazy = lazy(() => import('./components/MarkettingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 
 const generateClassName = createGenerateClassName({
-    productionPrefix: 'con'
+    productionPrefix: 'co'
 })
 
 export default ()=> {
@@ -26,7 +26,7 @@ export default ()=> {
                             <Route path='/auth'>
                                 <AuthLazy onSignIn={()=>{setIsSignedIn(true)}}/>
                             </Route>
-                            <Route path='/' component={MarketingLazy}/>
+                            {/* <Route path='/' component={MarketingLazy}/> */}
                         </Switch>
                     </Suspense>
                 </div>
